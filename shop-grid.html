@@ -442,17 +442,24 @@
                 document.getElementById('productCount').innerHTML = productCount;
                 // Loop through the products array and display each render UI
                 document.getElementById('renderProduct').innerHTML = products.map(product => {
-                    return `<div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="${product.ImageUrl}">
-                            </div>
-                            <div class="product__item__text">
-                                <h6><a href="#">${product.Name}</a></h6>
-                                <h5>${product.Price}</h5>
-                            </div>
+                // Create an image element to check if it loads correctly
+                const img = new Image();
+                img.onload = () => console.log(`Image loaded successfully: ${product.ImageUrl}`);
+                img.onerror = () => console.error(`Error loading image: ${product.ImageUrl}`);
+                img.src = product.ImageUrl;
+
+                return `<div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="${product.ImageUrl}">
                         </div>
-                    </div>`;
-                }).join('');
+                        <div class="product__item__text">
+                            <h6><a href="#">${product.Name}</a></h6>
+                            <h5>${product.Price}</h5>
+                        </div>
+                    </div>
+                </div>`;
+            }).join('');
+
                 // Pagination for each page have 6 products
                 // var pagination = '';
                 // for (var i = 1; i <= Math.ceil(productCount / 6); i++) {
