@@ -456,11 +456,11 @@
                         `;
                     }).join('');
                     // Pagination for each page have 6 products
-                    // var pagination = '';
-                    // for (var i = 1; i <= Math.ceil(productCount / 6); i++) {
-                    //     pagination += `<a href="#">${i}</a>`;
-                    // }
-                    // document.getElementById('paginationId').innerHTML = pagination;
+                    var pagination = '';
+                    for (var i = 1; i <= Math.ceil(productCount / 6); i++) {
+                        pagination += `<a href="#">${i}</a>`;
+                    }
+                    document.getElementById('paginationId').innerHTML = pagination;
 
                 })
                 .catch(error => {
