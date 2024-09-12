@@ -423,55 +423,34 @@
 
         var products = [];
     
-        // Fetch the JSON data from the file
         fetch('./data/productData.json')
-            .then(response => {
-                // Check if the response is OK (status in the range 200-299)
-                if (!response.ok) {
-                    throw new Error('Cannot load product was not ok');
-                }
-                // Parse the JSON data
-                return response.json();
-            })
-            .then(data => {
-                products = data;       
-                var productCount = products.length;
-                console.log(productCount);
-                console.log(products);
-                //update the product count
-                document.getElementById('productCount').innerHTML = productCount;
-                // Loop through the products array and display each render UI
-                document.getElementById('renderProduct').innerHTML = products.map(product => {
-                // Create an image element to check if it loads correctly
-                const img = new Image();
-                img.onload = () => console.log(`Image loaded successfully: ${product.ImageUrl}`);
-                img.onerror = () => console.error(`Error loading image: ${product.ImageUrl}`);
-                img.src = product.ImageUrl;
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+    .then(data => {
+        products = data;
+        var productCount = products.length;
+        document.getElementById('productCount').innerHTML = productCount;
 
-                return `<div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="${product.ImageUrl}">
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">${product.Name}</a></h6>
-                            <h5>${product.Price}</h5>
-                        </div>
+        document.getElementById('renderProduct').innerHTML = products.map(product => {
+            return `<div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="product__item">
+                    <div class="product__item__pic" style="background-image: url('${product.ImageUrl}');">
                     </div>
-                </div>`;
-            }).join('');
-
-                // Pagination for each page have 6 products
-                // var pagination = '';
-                // for (var i = 1; i <= Math.ceil(productCount / 6); i++) {
-                //     pagination += `<a href="#">${i}</a>`;
-                // }
-                // document.getElementById('paginationId').innerHTML = pagination;
-
-            })
-            .catch(error => {
-                // Handle any errors
-                console.error('There was a problem with the fetch operation:', error);
-            });
+                    <div class="product__item__text">
+                        <h6><a href="#">${product.Name}</a></h6>
+                        <h5>${product.Price}</h5>
+                    </div>
+                </div>
+            </div>`;
+        }).join('');
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
 
     </script>
     <script src="js/jquery-3.3.1.min.js"></script>
