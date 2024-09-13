@@ -591,23 +591,41 @@
     <!-- Footer Section End -->
     <script>
         document.getElementById('subscribe-form').addEventListener('submit', function (event) {
+            const email = document.getElementById('email').value;
             event.preventDefault(); // Prevent the form from submitting the traditional way
 
-            const email = document.getElementById('email').value;
 
             if (!validateEmail(email)) {
                 //append message to the DOM
                 document.getElementById('message').innerHTML = '<div class="alert alert-danger">Email không hợp lệ</div>';
-                return;
+                return;email
             }
-            document.getElementById('message').innerHTML = '<div class="alert alert-success">Đăng ký thành công</div>';
+            //Post email to this endpoint https://66da6506f47a05d55be4b315.mockapi.io/MockCRUD/user
+            fetch('https://66da6506f47a05d55be4b315.mockapi.io/MockCRUD/user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email,
+                }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('message').innerHTML = '<div class="alert alert-success">Đăng ký thành công</div>';
+                })
+                .catch((error) => {
+                    document.getElementById('message').innerHTML = '<div class="alert alert-danger">Đăng ký thất bại</div>';
+                });
+
+
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
 
         });
-
-        function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
-        }
+        
 
     </script>
     <!-- Js Plugins -->
