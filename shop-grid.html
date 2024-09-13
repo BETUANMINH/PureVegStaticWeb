@@ -127,7 +127,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
+                    <div class="breadcrumb__text" >
                         <h2>Sản phẩm</h2>
                     </div>
                 </div>
@@ -145,14 +145,14 @@
                             <div class="latest-product__text">
                                 <h4>Latest Products</h4>
                                 <div class="latest-product__slider owl-carousel">
-                                    <div class="latest-prdouct__slider__item">
+                                    <div class="latest-prdouct__slider__item" id="abc">
                                         <a href="#" class="latest-product__item">
                                             <div class="latest-product__item__pic">
                                                 <img src="img/latest-product/lp-1.jpg" alt="">
                                             </div>
                                             <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
+                                                <h6>Nấm Rơm Kho</h6>
+                                                <span>30,000 - 50,000 VNĐ</span>
                                             </div>
                                         </a>
                                         <a href="#" class="latest-product__item">
@@ -160,8 +160,8 @@
                                                 <img src="img/latest-product/lp-2.jpg" alt="">
                                             </div>
                                             <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
+                                                <h6>Mì Chay Nấm Shiitake</h6>
+                                                <span>40,000 - 60,000 VNĐ</span>
                                             </div>
                                         </a>
                                         <a href="#" class="latest-product__item">
@@ -169,40 +169,11 @@
                                                 <img src="img/latest-product/lp-3.jpg" alt="">
                                             </div>
                                             <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
+                                                <h6>Chè Đậu Đỏ</h6>
+                                                <span>50,000 - 70,000 VNĐ</span>
                                             </div>
                                         </a>
-                                    </div>
-                                    <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-1.jpg" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-2.jpg" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-3.jpg" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                    </div>
+                                    </div>                                    
                                 </div>
                             </div>
                         </div>
@@ -432,8 +403,7 @@
     <!-- Js Plugins -->
     <script>
 
-        var products = [];
-    
+    var products = [];
         fetch('./data/productData.json')
         .then(response => {
             if (!response.ok) {
