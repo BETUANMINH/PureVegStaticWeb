@@ -1,37 +1,23 @@
 [
     {
-        "Name": "Brown rice with lotus seeds : Cơm Nâu Hạt Sen<br/>",
-        "Ingradient": "Gạo nâu – 1 chén (200g), rửa sạch<br/>Hạt sen – 100g (tươi hoặc khô, nếu khô cần ngâm trước)<br/>Nước – 2-2.5 chén (500-625ml) (tùy thuộc vào loại gạo nâu)<br/>Hành tây – 1/2 củ (50g), băm nhỏ<br/>Tỏi – 2 tép, băm nhỏ<br/>Dầu ăn – 1 thìa canh (15ml) (để xào hành tỏi)<br/>Muối và tiêu – theo khẩu vị",
-        "Nutrition": "Năng lượng: 250-350 kcal<br/>Chất đạm: 8-10g (từ hạt sen và gạo nâu)<br/>Chất béo: 4-6g (từ dầu ăn)<br/>Carbohydrate: 50-60g (chủ yếu từ gạo nâu và hạt sen)<br/>Chất xơ: 6-8g (từ gạo nâu và hạt sen)",
-        "Price": "50,000 - 70,000 VNĐ",
-        "ImageUrl": "img/product/product-4.jpg"
-    },
-    {
-        "Name": "Red bean soup : Chè Đậu Đỏ<br/>",
+        "Name": "Chè Đậu Đỏ<br/>",
         "Ingradient": "Đậu đỏ – 150g, ngâm nước qua đêm hoặc ít nhất 2 giờ<br/>Đường – 100g (hoặc tùy khẩu vị)<br/>Nước – 1 lít (hoặc nhiều hơn tùy độ đặc loãng mong muốn)<br/>Hành tím – 2 tép, băm nhỏ (tùy chọn, để thêm hương vị)<br/>Dừa tươi – 100ml (nước dừa hoặc dừa bào sợi, tùy chọn)",
         "Nutrition": "Năng lượng: 150-250 kcal<br/>Chất đạm: 5-8g (từ đậu đỏ)<br/>Chất béo: 2-5g (từ dừa tươi nếu sử dụng)<br/>Carbohydrate: 30-40g (chủ yếu từ đậu đỏ và đường)<br/>Chất xơ: 5-7g (từ đậu đỏ)",
         "Price": "30,000 - 50,000 VNĐ",
         "ImageUrl": "img/product/product-4.jpg"
     },
     {
-        "Name": "Braised straw mushrooms : Nấm Rơm Kho<br/>",
+        "Name": "Nấm Rơm Kho<br/>",
         "Ingradient": "Nấm rơm – 200g, rửa sạch và để ráo<br/>Hành tây – 1/2 củ (50g), cắt lát<br/>Tỏi – 2 tép, băm nhỏ<br/>Nước tương (xì dầu) – 2 thìa canh (30ml)<br/>Dầu ăn – 2 thìa canh (30ml)<br/>Đường – 1 thìa cà phê (5g) (tùy chọn, để thêm vị ngọt)<br/>Muối và tiêu – theo khẩu vị<br/>Nước – 1 chén (250ml) (hoặc nhiều hơn tùy độ đặc loãng mong muốn)",
         "Nutrition": "Năng lượng: 150-250 kcal<br/>Chất đạm: 8-12g (từ nấm rơm)<br/>Chất béo: 8-12g (từ dầu ăn)<br/>Carbohydrate: 10-15g (chủ yếu từ nấm và đường nếu dùng)<br/>Chất xơ: 5-7g (từ nấm rơm)",
         "Price": "40,000 - 60,000 VNĐ",
         "ImageUrl": "img/product/product-4.jpg"
     },
     {
-        "Name": "Vegetarian noodles with shiitake mushrooms : Mì Chay Nấm Shiitake",
+        "Name": "Mì Chay Nấm Shiitake",
         "Ingradient": "Mì chay – 200g<br/>Nấm shiitake – 100g, cắt lát<br/>Hành tây – 1/2 củ (50g), cắt lát<br/>Tỏi – 2 tép, băm nhỏ<br/>Dầu ăn – 2 thìa canh (30ml)<br/>Nước tương (xì dầu) – 2 thìa canh (30ml)<br/>Nước – 1 chén (250ml) (hoặc nhiều hơn tùy độ đặc loãng mong muốn)<br/>Rau xanh (như cải ngọt, rau thơm) – một ít, cắt nhỏ (tùy chọn)<br/>Muối và tiêu – theo khẩu vị",
         "Nutrition": "Năng lượng: 250-350 kcal<br/>Chất đạm: 10-15g (từ nấm shiitake và mì)<br/>Chất béo: 8-12g (từ dầu ăn)<br/>Carbohydrate: 40-50g (chủ yếu từ mì chay)<br/>Chất xơ: 5-7g (từ nấm và rau xanh)",
         "Price": "50,000 - 70,000 VNĐ",
-        "ImageUrl": "img/product/product-4.jpg"
-    },
-    {
-        "Name": "Broccoli, carrot, mushroom : Rau Củ Xào Bông Cải Xanh, Cà Rốt và Nấm",
-        "Ingradient": "Bông cải xanh – 150g, cắt thành từng nhánh nhỏ<br/>Cà rốt – 1 củ lớn (khoảng 100g), cắt lát mỏng hoặc cắt sợi<br/>Nấm (như nấm trắng, nấm rơm, hoặc nấm shiitake) – 100g, cắt lát<br/>Hành tây – 1/2 củ (50g), cắt lát<br/>Tỏi – 2 tép, băm nhỏ<br/>Dầu ăn – 2 thìa canh (30ml)<br/>Nước tương (xì dầu) – 2 thìa canh (30ml)<br/>Muối và tiêu – theo khẩu vị",
-        "Nutrition": "Năng lượng: 150-200 kcal<br/>Chất đạm: 5-8g (từ nấm và rau củ)<br/>Chất béo: 8-10g (từ dầu ăn)<br/>Carbohydrate: 20-25g (chủ yếu từ cà rốt)<br/>Chất xơ: 7-10g (từ rau củ)",
-        "Price": "40,000 - 60,000 VNĐ ",
         "ImageUrl": "img/product/product-4.jpg"
     }
 ]
