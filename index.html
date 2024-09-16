@@ -138,7 +138,7 @@
                         <span>Pure Veg</span>
                         <h2 style="color: rgb(98, 81, 56);">Leave Healthy leave green</h2>
                         <p>Free Pickup and Delivery Available</p>
-                        <a href="#" class="btn btn-success">SHOP NOW</a>
+                        <a href="./shop-grid.html" class="btn btn-success">SHOP NOW</a>
                     </div>
                 </div>
             </div>
@@ -314,7 +314,7 @@
                     return `
                     <div class="col-lg-4">
                     <div class="categories__item set-bg" style="background-image: url('${product.ImageUrl}');">
-                        <h5><a href="#">${product.Name}</a></h5>
+                        <h5><a href="./shop-details.html?id=${product.Id}">${product.Name}</a></h5>
                     </div>
                      </div>
             `;
@@ -345,7 +345,7 @@
             <div class="featured__item__pic set-bg" style="background-image: url('${product.ImageUrl}');">
             </div>
             <div class="featured__item__text">
-            <h6><a href="#">${product.Name}</a></h6>
+            <h6><a href="./shop-details.html?id=${product.Id}">${product.Name}</a></h6>
             <h5>${product.Price}</h5>
             </div>
             </div>
