@@ -206,19 +206,20 @@
                     </div>
                 </div>
             </div>
-            <form action="#">
+            <form id="feedback-form">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="Your name">
+                        <input id="name" type="text" placeholder="Your name" name="name">
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="Your Email">
+                        <input id="email" type="text" placeholder="Your Email" name="email">
                     </div>
                     <div class="col-lg-12 text-center">
-                        <textarea placeholder="Your message"></textarea>
+                        <textarea id="message" placeholder="Your message" name="message"></textarea>
                         <button type="submit" class="site-btn">SEND MESSAGE</button>
                     </div>
                 </div>
+                <div id="message-box"></div>
             </form>
         </div>
     </div>
@@ -281,7 +282,48 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        document.getElementById('feedback-form').addEventListener('submit', function (event) {
+            const email = document.getElementById('email').value;
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
 
+            if (!validateEmail(email)) {
+                //append message to the DOM
+                document.getElementById('message-box').innerHTML = '<div class="alert alert-danger">Email không hợp lệ</div>';
+                return;
+            }
+            //Post email to this endpoint https://66da6506f47a05d55be4b315.mockapi.io/MockCRUD/user
+            fetch('https://66da6506f47a05d55be4b315.mockapi.io/MockCRUD/feedback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    message: message
+                }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('message-box').innerHTML = '<div class="alert alert-success">Gửi Feedback thành công</div>';
+                })
+                .catch((error) => {
+                    document.getElementById('message-box').innerHTML = '<div class="alert alert-danger">Gửi Feedback thất bại</div>';
+                });
+
+
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+
+        });
+
+
+    </script>
 
 
 </body>
