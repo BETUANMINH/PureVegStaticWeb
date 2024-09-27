@@ -140,10 +140,10 @@
         </div>
     </section>
     <section>
-        <div class="container">
+        <div class="container" style="padding-bottom: 50px;">
             <div class="row">
                 <div class="col-lg-6">
-                    <p style="font-size: 20px; margin-top: 50px;">Pure Veg - Cửa hàng thực phẩm chay chất lượng cao</p>
+                    <p style="font-size: 20px; margin-top: 50px; font-weight: bold;">Pure Veg - Cửa hàng thực phẩm chay chất lượng cao</p>
                     <p style="font-size: 16px; margin-top: 20px;">Dự án "PureVeg" là một sáng kiến độc đáo nhằm mang đến
                         cho người tiêu dùng những bữa ăn chay tiện lợi và bổ dưỡng, với hình thức ready-to-cook. Được
                         thiết kế cho những người bận rộn nhưng vẫn muốn duy trì chế độ ăn chay lành mạnh, PureVeg cung
@@ -152,13 +152,13 @@
                 </div>
                 <div class="col-lg-6">
                     <p style="font-size: 20px; margin-top: 50px;"></p>
-                    <img style="width: 500px; height: 300px;" src="https://langchaixua.com/wp-content/uploads/2021/12/cua-hang-thuc-pham-chay-8.jpg" alt="">
+                    <img style="width: 500px; height: 300px; border-radius: 5%;" src="https://langchaixua.com/wp-content/uploads/2021/12/cua-hang-thuc-pham-chay-8.jpg" alt="">
                 </div>
             </div>
             <div class="row">
                 
                 <div class="col-lg-6">
-                    <p style="font-size: 20px; margin-top: 50px;">Nguyên liệu của chúng mình</p>
+                    <p style="font-size: 20px; margin-top: 50px; font-weight: bold;">Nguyên liệu của chúng mình</p>
                     <p style="font-size: 16px; margin-top: 20px;">Các món ăn trong dự án được chúng mình chế biến từ các
                         nguyên liệu tươi ngon, giàu dinh dưỡng và hoàn toàn không có thành phần từ động vật. Với PureVeg,
                         chúng mình mong muốn không chỉ giúp người tiêu dùng tiết kiệm thời gian nấu nướng mà còn góp phần
@@ -167,7 +167,7 @@
 
                 <div class="col-lg-6">
                     <p style="font-size: 20px; margin-top: 50px;"></p>
-                    <img style="width: 500px; height: 300px;" src="https://danviet.mediacdn.vn/296231569849192448/2022/12/20/159771609-2896931810588995-3618458814222607521-n-167149640601359937673.jpg" alt="">
+                    <img style="width: 500px; height: 300px; border-radius: 5%;" src="https://danviet.mediacdn.vn/296231569849192448/2022/12/20/159771609-2896931810588995-3618458814222607521-n-167149640601359937673.jpg" alt="">
                 </div>
             </div>
             
@@ -204,24 +204,62 @@
                     <div class="footer__widget">
                         <h6>Tham gia bản tin của chúng tôi ngay bây giờ</h6>
                         <p>Nhận email cập nhật về cửa hàng mới nhất và các ưu đãi đặc biệt của chúng tôi.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Enter your mail">
+                        <form id="subscribe-form">
+                            <input type="text" id="email" placeholder="Enter your mail" required>
                             <button type="submit" class="site-btn">Subscribe</button>
                         </form>
+                        <div id="message"></div>
+
                         <div class="footer__widget__social">
                             <a href="https://www.facebook.com/PureVegetarianFPT"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="https://www.tiktok.com/@vegetarian_foodielife"><i class="fab fa-tiktok"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        </div>
     </footer>
     <!-- Footer Section End -->
+    
+    <script>
+        document.getElementById('subscribe-form').addEventListener('submit', function (event) {
+            const email = document.getElementById('email').value;
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+
+            if (!validateEmail(email)) {
+                //append message to the DOM
+                document.getElementById('message').innerHTML = '<div class="alert alert-danger">Email không hợp lệ</div>';
+                return; email
+            }
+            //Post email to this endpoint https://66da6506f47a05d55be4b315.mockapi.io/MockCRUD/user
+            fetch('https://66da6506f47a05d55be4b315.mockapi.io/MockCRUD/user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email,
+                }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('message').innerHTML = '<div class="alert alert-success">Đăng ký thành công</div>';
+                })
+                .catch((error) => {
+                    document.getElementById('message').innerHTML = '<div class="alert alert-danger">Đăng ký thất bại</div>';
+                });
+
+
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+
+        });
+
+
+    </script>
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>

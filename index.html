@@ -10,6 +10,9 @@
     <title>Pure Veg</title>
 
     <!-- Google Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
@@ -22,6 +25,17 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <style>
+        .fab .fa-tiktok {
+            color: #111111;
+            filter: drop-shadow(-5px -5px 0 #24f6f0) contrast(150%) brightness(110%);
+            z-index: -1;
+        }
+
+        .fab .fa-tiktok::after {
+            filter: drop-shadow(5px 5px 0 #F70250) contrast(150%) brightness(110%);
+            z-index: -1;
+        }
+
         .header__menu {
             display: flex;
             justify-content: space-between;
@@ -157,7 +171,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" id="renderUpComming" >
+            <div class="row" id="renderUpComming">
                 <div class="col-lg-3">
                     <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg">
                         <h5><a href="./checkout.html">Fresh Fruit</a></h5>
@@ -180,7 +194,7 @@
                 </div>
             </div>
             <div class="row featured__filter" id="renderTopRate">
-                
+
             </div>
         </div>
     </section>
@@ -287,9 +301,7 @@
 
                         <div class="footer__widget__social">
                             <a href="https://www.facebook.com/PureVegetarianFPT"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="https://www.tiktok.com/@vegetarian_foodielife"><i class="fab fa-tiktok"></i></a>
                         </div>
                     </div>
                 </div>
@@ -297,71 +309,7 @@
         </div>
     </footer>
     <!-- Footer Section End -->
-     <script>
-        var upComming = [];
-        fetch('./data/upCommingData.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                upComming = data;
-                console.log(upComming.length);
-                console.log(upComming);
-                document.getElementById('renderUpComming').innerHTML = upComming.map(product => {
-                    return `
-                    <div class="col-lg-4">
-                    <div class="categories__item set-bg" style="background-image: url('${product.ImageUrl}');">
-                        <h5><a href="./shop-details.html?id=${product.Id}">${product.Name}</a></h5>
-                    </div>
-                     </div>
-            `;
-                }).join('');
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
-     </script>
-    <script>
-
-        var products = [];
-        
-        fetch('./data/topRateData.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                products = data;
-                console.log(products);
-                //filter top rate product id = 2 || id = 3
-                products = products.filter(product => product.Id == 2 || product.Id == 3 || product.Id == 6);
-                document.getElementById('renderTopRate').innerHTML = products.map(product => {
-                    return `
-            <div class="col-lg-4 col-md-4 col-sm-6 mix oranges fresh-meat">
-            <div class="featured__item">
-            <div class="featured__item__pic set-bg" style="background-image: url('${product.ImageUrl}');">
-            </div>
-            <div class="featured__item__text">
-            <h6><a href="./shop-details.html?id=${product.Id}">${product.Name}</a></h6>
-            <h5>${product.Price}</h5>
-            </div>
-            </div>
-            </div>
-            `;
-                }).join('');
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
-
-            
-
-    </script>
+    
     <script>
         document.getElementById('subscribe-form').addEventListener('submit', function (event) {
             const email = document.getElementById('email').value;
@@ -398,6 +346,71 @@
             }
 
         });
+
+
+    </script>
+    <script>
+        var upComming = [];
+        fetch('./data/upCommingData.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                upComming = data;
+                console.log(upComming.length);
+                console.log(upComming);
+                document.getElementById('renderUpComming').innerHTML = upComming.map(product => {
+                    return `
+                    <div class="col-lg-4">
+                    <div class="categories__item set-bg" style="background-image: url('${product.ImageUrl}');">
+                        <h5><a href="./shop-details.html?id=${product.Id}">${product.Name}</a></h5>
+                    </div>
+                     </div>
+            `;
+                }).join('');
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    </script>
+    <script>
+
+        var products = [];
+
+        fetch('./data/topRateData.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                products = data;
+                console.log(products);
+                //filter top rate product id = 2 || id = 3
+                products = products.filter(product => product.Id == 2 || product.Id == 3 || product.Id == 6);
+                document.getElementById('renderTopRate').innerHTML = products.map(product => {
+                    return `
+            <div class="col-lg-4 col-md-4 col-sm-6 mix oranges fresh-meat">
+            <div class="featured__item">
+            <div class="featured__item__pic set-bg" style="background-image: url('${product.ImageUrl}');">
+            </div>
+            <div class="featured__item__text">
+            <h6><a href="./shop-details.html?id=${product.Id}">${product.Name}</a></h6>
+            <h5>${product.Price}</h5>
+            </div>
+            </div>
+            </div>
+            `;
+                }).join('');
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+
 
 
     </script>
