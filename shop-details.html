@@ -8,7 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pure Veg</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
@@ -149,16 +151,17 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
-                            <img class="product__details__pic__item--large" src="img/product/details/product-details-1.jpg" alt="Product Image">
+                            <img class="product__details__pic__item--large" id="imageRender" src="img/product/details/product-details-1.jpg" alt="Product Image">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <div class="product__details__text">
-                        <h3 id="renderName">Gói rau củ</h3>
-                        <div class="product__details__price" id="renderPrice">$50.00</div>
+                    <div class="product__details__text">                        
+                        </div>
+                        <h3 id="renderName" style="font-weight: bold;">Gói rau củ</h3>
+                        <div class="product__details__price" id="renderPrice" style="color: red; font-size: larger;">50.00</div>
                         <div class="product__details__tab">
-                            <ul class="nav nav-tabs" role="tablist">
+                            <ul class="nav nav-tabs" role="tablist" style="padding-top: 40px;">
                                 <li class="nav-item">
                                     <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab" aria-selected="true">Thông tin dinh dưỡng</a>
                                 </li>
@@ -177,7 +180,6 @@
                                         <p id="renderGuide">Gạo nâu – 1 chén (200g), Hạt sen – 100g, Nước – 2-2.5 chén, Hạt chia – 1 muỗng cà phê.</p>
                                     </div>
                                 </div>
-                        </div>
                         </div>
                     </div>
                 </div>
@@ -325,9 +327,14 @@
                 }
 
                 document.getElementById('renderName').innerHTML = product.Name || 'N/A';
-                document.getElementById('renderPrice').innerHTML = `$${product.Price || 'N/A'}`;
+                document.getElementById('renderPrice').innerHTML = `${product.Price || 'N/A'}`;
                 document.getElementById('renderNutrition').innerHTML = `${product.Nutrition || 'N/A'}`;
                 document.getElementById('renderGuide').innerHTML = product.Ingradient || 'N/A';
+                document.getElementById('imageRender').src = product.ImageUrl || 'N/A';
+                console.log(product);
+
+
+
             })
             .catch(error => {
                 console.error('There was a problem with the fetch operation:', error);
@@ -335,6 +342,7 @@
                 document.getElementById('renderPrice').innerHTML = '';
                 document.getElementById('renderNutrition').innerHTML = '';
                 document.getElementById('renderGuide').innerHTML = '';
+
             });
     </script>
     <!-- JS Plugins -->
