@@ -211,7 +211,7 @@
                                         <div class="product__discount__item__text">
                                             <span></span>
                                             <h5><a href="#">Salad rau củ</a></h5>
-                                            <div class="product__item__price">$30.00 <span>$36.00</span></div>
+                                            <div class="product__item__price">30.000 VND <span> 36.000VND</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -229,7 +229,7 @@
                                         <div class="product__discount__item__text">
                                             <span></span>
                                             <h5><a href="#">Cơm Chiên Chay</a></h5>
-                                            <div class="product__item__price">$30.00 <span>$36.00</span></div>
+                                            <div class="product__item__price">30.000 VND<span>36.000 VND</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -247,7 +247,7 @@
                                         <div class="product__discount__item__text">
                                             <span></span>
                                             <h5><a href="#">Spaghetti Sốt Cà Chua</a></h5>
-                                            <div class="product__item__price">$30.00 <span>$36.00</span></div>
+                                            <div class="product__item__price">30.000 VND <span>36.000 VND</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -408,6 +408,8 @@
             })
             .then(data => {
                 products = data;
+                //take first 6 products
+                products = products.slice(0, 6);
                 var productCount = products.length;
                 document.getElementById('productCount').innerHTML = productCount;
 
