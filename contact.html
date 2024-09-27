@@ -8,7 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pure Veg</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
@@ -225,53 +227,90 @@
     </div>
     <!-- Contact Form End -->
 
-        <!-- Footer Section Begin -->
-        <footer class="footer spad">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="footer__about">
-                            <div class="footer__widget">
-                                <h6>Thông tin liên lạc</h6>
-                            </div>
-                            <ul>
-                                <li>Address: P. Nguyễn Hoàng, Mỹ Đình, Nam Từ Liêm, Hà Nội</li>
-                                <li>Phone: 0912.487.797</li>
-                                <li>Email: purevegfpt@gmail.com</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+     <!-- Footer Section Begin -->
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
                         <div class="footer__widget">
-                            <h6>Dự án khởi nghiệp</h6>
-                            <p>Pure Veg - thuộc Đại học FPT Hòa Lạc</p>
-                            <div class="footer__about__logo"></div>
-                            <a href="./index.html"><img src="img/logo.png" alt="" style="width: 80%;"></a>
+                            <h6>Thông tin liên lạc</h6>
                         </div>
+                        <ul>
+                            <li>Address: P. Nguyễn Hoàng, Mỹ Đình, Nam Từ Liêm, Hà Nội</li>
+                            <li>Phone: 0912.487.797</li>
+                            <li>Email: purevegfpt@gmail.com</li>
+                        </ul>
                     </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="footer__widget">
-                            <h6>Tham gia bản tin của chúng tôi ngay bây giờ</h6>
-                            <p>Nhận email cập nhật về cửa hàng mới nhất và các ưu đãi đặc biệt của chúng tôi.</p>
-                            <form action="#">
-                                <input type="text" placeholder="Enter your mail">
-                                <button type="submit" class="site-btn">Subscribe</button>
-                            </form>
-                            <div class="footer__widget__social">
-                                <a href="https://www.facebook.com/PureVegFPT"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Dự án khởi nghiệp</h6>
+                        <p>Pure Veg - thuộc Đại học FPT Hòa Lạc</p>
+                        <div class="footer__about__logo"></div>
+                        <a href="./index.html"><img src="img/logo.png" alt="" style="width: 80%;"></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Tham gia bản tin của chúng tôi ngay bây giờ</h6>
+                        <p>Nhận email cập nhật về cửa hàng mới nhất và các ưu đãi đặc biệt của chúng tôi.</p>
+                        <form id="subscribe-form">
+                            <input type="text" id="email" placeholder="Enter your mail" required>
+                            <button type="submit" class="site-btn">Subscribe</button>
+                        </form>
+                        <div id="message"></div>
+
+                        <div class="footer__widget__social">
+                            <a href="https://www.facebook.com/PureVegetarianFPT"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.tiktok.com/@vegetarian_foodielife"><i class="fab fa-tiktok"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
     
-            </div>
-        </footer>
-        <!-- Footer Section End -->
-    
+    <script>
+        document.getElementById('subscribe-form').addEventListener('submit', function (event) {
+            const email = document.getElementById('email').value;
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+
+            if (!validateEmail(email)) {
+                //append message to the DOM
+                document.getElementById('message').innerHTML = '<div class="alert alert-danger">Email không hợp lệ</div>';
+                return; email
+            }
+            //Post email to this endpoint https://66da6506f47a05d55be4b315.mockapi.io/MockCRUD/user
+            fetch('https://66da6506f47a05d55be4b315.mockapi.io/MockCRUD/user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email,
+                }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('message').innerHTML = '<div class="alert alert-success">Đăng ký thành công</div>';
+                })
+                .catch((error) => {
+                    document.getElementById('message').innerHTML = '<div class="alert alert-danger">Đăng ký thất bại</div>';
+                });
+
+
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+
+        });
+
+
+    </script>
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
