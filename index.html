@@ -310,7 +310,44 @@
         </div>
     </footer>
     <!-- Footer Section End -->
-    
+    <script>
+
+        var products = [];
+
+        fetch('./data/topRateData.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                products = data;
+                console.log(products);
+                //filter top rate product id = 2 || id = 3
+                products = products.filter(product => product.Id == 2 || product.Id == 3 || product.Id == 6);
+                document.getElementById('renderTopRate').innerHTML = products.map(product => {
+                    return `
+            <div class="col-lg-4 col-md-4 col-sm-6 mix oranges fresh-meat">
+            <div class="featured__item">
+            <div class="featured__item__pic set-bg" style="background-image: url('${product.ImageUrl}');">
+            </div>
+            <div class="featured__item__text">
+            <h6><a href="./shop-details.html?id=${product.Id}">${product.Name}</a></h6>
+            <h5>${product.Price}</h5>
+            </div>
+            </div>
+            </div>
+            `;
+                }).join('');
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+
+
+
+    </script>
     <script>
         document.getElementById('subscribe-form').addEventListener('submit', function (event) {
             const email = document.getElementById('email').value;
@@ -377,44 +414,7 @@
                 console.error('There was a problem with the fetch operation:', error);
             });
     </script>
-    <script>
-
-        var products = [];
-
-        fetch('./data/topRateData.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                products = data;
-                console.log(products);
-                //filter top rate product id = 2 || id = 3
-                products = products.filter(product => product.Id == 2 || product.Id == 3 || product.Id == 6);
-                document.getElementById('renderTopRate').innerHTML = products.map(product => {
-                    return `
-            <div class="col-lg-4 col-md-4 col-sm-6 mix oranges fresh-meat">
-            <div class="featured__item">
-            <div class="featured__item__pic set-bg" style="background-image: url('${product.ImageUrl}');">
-            </div>
-            <div class="featured__item__text">
-            <h6><a href="./shop-details.html?id=${product.Id}">${product.Name}</a></h6>
-            <h5>${product.Price}</h5>
-            </div>
-            </div>
-            </div>
-            `;
-                }).join('');
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
-
-
-
-    </script>
+    
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
