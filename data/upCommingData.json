@@ -1,6 +1,6 @@
 [
     {
-        "Id": 1,
+        "Id": 17,
         "Name": "Chè Đậu Đỏ<br/>",
         "Ingradient": "Đậu đỏ – 150g, ngâm nước qua đêm hoặc ít nhất 2 giờ<br/>Đường – 100g (hoặc tùy khẩu vị)<br/>Nước – 1 lít (hoặc nhiều hơn tùy độ đặc loãng mong muốn)<br/>Hành tím – 2 tép, băm nhỏ (tùy chọn, để thêm hương vị)<br/>Dừa tươi – 100ml (nước dừa hoặc dừa bào sợi, tùy chọn)",
         "Nutrition": "Năng lượng: 150-250 kcal<br/>Chất đạm: 5-8g (từ đậu đỏ)<br/>Chất béo: 2-5g (từ dừa tươi nếu sử dụng)<br/>Carbohydrate: 30-40g (chủ yếu từ đậu đỏ và đường)<br/>Chất xơ: 5-7g (từ đậu đỏ)",
@@ -8,7 +8,7 @@
         "ImageUrl": "https://dayphache.edu.vn/wp-content/uploads/2022/08/mon-che-dau-do.jpg"
     },
     {
-        "Id": 2,
+        "Id": 18,
         "Name": "Nấm Rơm Kho<br/>",
         "Ingradient": "Nấm rơm – 200g, rửa sạch và để ráo<br/>Hành tây – 1/2 củ (50g), cắt lát<br/>Tỏi – 2 tép, băm nhỏ<br/>Nước tương (xì dầu) – 2 thìa canh (30ml)<br/>Dầu ăn – 2 thìa canh (30ml)<br/>Đường – 1 thìa cà phê (5g) (tùy chọn, để thêm vị ngọt)<br/>Muối và tiêu – theo khẩu vị<br/>Nước – 1 chén (250ml) (hoặc nhiều hơn tùy độ đặc loãng mong muốn)",
         "Nutrition": "Năng lượng: 150-250 kcal<br/>Chất đạm: 8-12g (từ nấm rơm)<br/>Chất béo: 8-12g (từ dầu ăn)<br/>Carbohydrate: 10-15g (chủ yếu từ nấm và đường nếu dùng)<br/>Chất xơ: 5-7g (từ nấm rơm)",
@@ -16,7 +16,7 @@
         "ImageUrl": "https://bepxua.vn/wp-content/uploads/2020/09/nam-rom-kho-chay-fb-rotated.jpg"
     },
     {
-        "Id": 3,
+        "Id": 19,
         "Name": "Mì Chay Nấm Shiitake",
         "Ingradient": "Mì chay – 200g<br/>Nấm shiitake – 100g, cắt lát<br/>Hành tây – 1/2 củ (50g), cắt lát<br/>Tỏi – 2 tép, băm nhỏ<br/>Dầu ăn – 2 thìa canh (30ml)<br/>Nước tương (xì dầu) – 2 thìa canh (30ml)<br/>Nước – 1 chén (250ml) (hoặc nhiều hơn tùy độ đặc loãng mong muốn)<br/>Rau xanh (như cải ngọt, rau thơm) – một ít, cắt nhỏ (tùy chọn)<br/>Muối và tiêu – theo khẩu vị",
         "Nutrition": "Năng lượng: 250-350 kcal<br/>Chất đạm: 10-15g (từ nấm shiitake và mì)<br/>Chất béo: 8-12g (từ dầu ăn)<br/>Carbohydrate: 40-50g (chủ yếu từ mì chay)<br/>Chất xơ: 5-7g (từ nấm và rau xanh)",
